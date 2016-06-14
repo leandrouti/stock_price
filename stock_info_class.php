@@ -99,11 +99,12 @@
 			//GET symbol
 			$symbol = array();
 			$price = array();
+			$result['code'] = $code;
 			if(preg_match('#<th class="symbol"><h1>(.*)</h1></th>#', $page, $symbol)){
 				if(preg_match('#<td class="stoksPrice">(.+)</td>#', $page, $price)){
-					$result[$code]["price"] = $price[1];
+					$result["price"] = $price[1];
 				}
-				$result[$code]["name"] = $symbol[1];
+				$result["name"] = $symbol[1];
 				return $result;
 			}else{
 				return false;
